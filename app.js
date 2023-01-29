@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js"); // importing local module
 const mongoose = require("mongoose");
 const _ = require("lodash");
+const dotenv = require("dotenv");
 
 
 const app = express();
@@ -146,6 +147,6 @@ app.get("/:cutomListName", (req, res) => {
 
 });
 
-app.listen(5000, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log("the server has started on port 5000");
 });
